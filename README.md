@@ -8,7 +8,89 @@ unzip awscliv2.zip
 sudo ./aws/install
 ```
 
-[default]
-aws_access_key_id=ASIA3JPRBSQ2SCSVJU2Q
-aws_secret_access_key=YImfxfZ9Vb3kG9NGzaVl3FXl5e58SAWZsvclKlq3
-aws_session_token=IQoJb3JpZ2luX2VjED4aCXVzLXdlc3QtMiJHMEUCIQD+JRiEds8mYa6Bok/80yO9O7s2CyTWQ23MLOjIoq+s+QIgZDqe3JA5ucCOiyS7OP1BIEQ46pReVlUSV1LDBFFYu7gqsQIIBhAAGgw3NzYyODM5ODQ5NDkiDPrjBNVKpi8hJJ9uHCqOAkDte0HQPZmQCDCGgb3XJuhpqDkgIoGShDiULgfEtzYuer1NMnIqT2NeAjnYhSa0BNz1F+pKKyHZoqjZcHOhQC2tniyonYQe1QSORJbKb7WXcv0ksFCrq64Yq7Pl50R/UbGD/YanVqU03GvxGWXRBEuJTO71tU/RR0kMbfa6CRg6sZR1IRrtBrhQuG71Ld/zx0kACScfMT397k9prsOIAOnpkUehgRKm6tW5mwdO5quftSZhN0Z/QG8GwHnPV7ZbQNHki5Gj90tvYT75OO9yCX/YzE37ohrc7EHnW52VUewYKQtKTf2+Z5OUUOCKgvIF8Sjql7AsHU4aanc2J+iiKwhpTxOCzBcwb7ynlO9wyDCZjNvOBjqdAY5L6fNcgoLw2uI5r0lx3LJgyFGOTJ8ADnMgVcX14JL0TFaMN5zAesI2AjZl1nFkZCedK7EpCtwS8kW23C1R16rEmeedJ2y1h5d0/5QEbeVZUoc/waQk/o+XqrlrDE8+PlrXmEDA4+geyUgmi8DTkLAkReLs0bOXETUEXGkq4M3DvrfupgDRrcPfbz6xrTxshADVxmMXw9Xpi5uJk+o=
+## Create Virtual Environment
+```
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+## Problems
+
+1. Automatizador de subida de archivos a Amazon S3
+Objetivo
+Crear un script en Python que suba automáticamente archivos locales a un bucket.
+Servicios involucrados
+Amazon S3
+boto3
+Funcionalidad del proyecto
+El script debe:
+Subir un archivo
+Listar archivos en el bucket
+Descargar un archivo
+
+2. Sistema automático de backups a S3
+Objetivo
+Crear un script que haga backup automático de una carpeta local hacia S3.
+Servicios involucrados
+Amazon S3
+Funcionalidad
+El programa debe:
+Escanear una carpeta
+Subir todos los archivos
+Crear una carpeta con fecha
+Ejemplo de estructura en S3:
+
+
+3. Monitor de instancias EC2
+Objetivo
+Crear un script que liste y monitoree instancias EC2.
+Servicios involucrados
+Amazon EC2
+Funcionalidad
+El script debe mostrar:
+Instance ID
+Estado
+Tipo de instancia
+IP pública
+
+
+4. Script para limpiar buckets S3 automáticamente
+Objetivo
+Crear un programa que detecte y elimine archivos antiguos.
+Servicios
+Amazon S3
+Funcionalidad
+El script debe:
+listar objetos
+detectar archivos > 30 días
+eliminarlos
+
+5. Sistema simple de alertas con CloudWatch
+Objetivo
+Crear métricas personalizadas desde Python.
+Servicios
+Amazon CloudWatch
+
+6. Generador automático de usuarios IAM
+Objetivo
+Crear un script que cree usuarios IAM automáticamente.
+Servicios
+AWS Identity and Access Management
+Funcionalidad
+El script debe:
+crear usuarios
+asignar políticas
+generar access keys
+
+7. Inventario de recursos AWS
+Objetivo
+Crear un script que escanee tu cuenta AWS y genere un inventario.
+Servicios
+Amazon EC2
+Amazon S3
+AWS Lambda
+Salida del programa
+El script genera un archivo:
+aws_inventory.json
+
+
