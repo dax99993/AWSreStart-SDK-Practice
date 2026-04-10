@@ -1,0 +1,16 @@
+{
+    "metadata": {
+        "scan_time": "2026-04-10T10:13:04.382592",
+        "provider": "AWS"
+    },
+    "ec2_instances": [],
+    "s3_buckets": [],
+    "lambda_functions": [
+        {
+            "name": "MonitoringFunction",
+            "runtime": "python3.10",
+            "memory": 128,
+            "last_modified": "2026-04-10T15:23:53.946+0000"
+        }
+    ]
+}
