@@ -1,9 +1,10 @@
 import boto3
-import time
+from datetime import datetime
 import os
 
 bucket_name = 'my-bucket-dbt99'
-base_path = "/workspaces/mex30-sdk/Ejercicio2/"
+base_path = os.getcwd()
+print(base_path)
 folder_name = 'folder_to_backup'
 
 def main():
@@ -31,14 +32,15 @@ def main():
         exit(1)
 
     # Upload files to S3
+    current_date = datetime.now().strftime("%Y-%m-%d_%H-%M")
+    prefix = f"backup_{current_date}"
     for root, dirs, files in os.walk(folder_path):
         for file in files:
             file_path = os.path.join(root, file)
-            s3_key = os.path.relpath(file_path, base_path)
+            s3_key = os.path.join(prefix, file)
             print(f"Uploading '{file_path}' to S3 bucket '{bucket_name}' with key '{s3_key}'...")
             s3.upload_file(file_path, bucket_name, s3_key)
             print(f"File '{file_path}' uploaded successfully.")
-
 
 if __name__ == "__main__":
     main()
